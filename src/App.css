@@ -1,38 +1,166 @@
-.App {
+.app-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header,
+.footer {
+  background-color: #69a937; 
+  color: black; 
+  padding: 10px 20px;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.header-title {
+  font-size: 2rem;
+  margin: 0;
+  margin-right: auto; /* Pushes title to the left */
+}
+
+.github-logo-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+  margin-left: auto; /* Pushes GitHub logo to the extreme right */
+}
+
+.github-logo-link:hover {
+  opacity: 0.8;
+}
+
+.github-logo {
+  width: 40px; /* Adjust size as needed */
+  height: 40px; /* Adjust size as needed */
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.footer-text {
+  font-size: 1rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.footer-react {
+  width: 40px;
+  height: 30px;
+  vertical-align: middle;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.board-container {
+  flex: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center; 
+  padding: 20px;
+}
+
+.board-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
+  grid-template-rows: repeat(3, 1fr); 
+  gap: 1px;
+  width: 90vw; 
+  max-width: 450px; 
+  height: 90vw; 
+  max-height: 450px;
+  box-sizing: border-box;
+}
+
+.square {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  background-color: #f0f0f0;
+  border: 2px solid #ddd;
+  font-size: 2.5rem; 
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  text-align: center;
+  line-height: 1;
+}
+
+.square:hover {
+  background-color: #e0e0e0;
+}
+
+.turn-indicator {
+  font-size: 1.25rem;
+  text-align: center; 
+  margin-bottom: 20px; 
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1rem; 
+  cursor: pointer;
+}
+
+@media (max-width: 600px) {
+  .header-title {
+    font-size: 1.5rem;
+  }
+
+  .footer-text {
+    font-size: 0.875rem;
+  }
+
+  .turn-indicator {
+    font-size: 1rem;
+  }
+
+  button {
+    padding: 8px 16px;
+    font-size: 0.875rem;
+  }
+
+  .github-logo {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+.undo-button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.github-button {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  background-color: #333;
   color: white;
+  padding: 8px 12px;
+  border-radius: 20px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
-.App-link {
-  color: #61dafb;
+.github-button:hover {
+  background-color: #444;
+  transform: scale(1.05); 
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.github-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 8px;
 }
